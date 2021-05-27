@@ -1,16 +1,15 @@
 import "reflect-metadata"
 import { ApolloServer } from "apollo-server-express"
 import * as express from "express"
-import { HelloResolver } from "./resolvers/hello"
 import { buildSchema } from "type-graphql"
+import { AlunoResolver } from "./resolvers/aluno"
 
 const main = async () => {
   const app = express()
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [HelloResolver],
-      validate: false,
+      resolvers: [AlunoResolver],
     }),
   })
 
