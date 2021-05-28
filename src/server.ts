@@ -2,9 +2,9 @@ import "reflect-metadata"
 import { ApolloServer } from "apollo-server-express"
 import * as express from "express"
 import { buildSchema } from "type-graphql"
-import { AlunoResolver } from "./resolvers/aluno"
+import { AlunoResolver } from "./resolvers/AlunoResolver"
 
-const main = async () => {
+const runServer = async () => {
   const app = express()
 
   const apolloServer = new ApolloServer({
@@ -16,12 +16,11 @@ const main = async () => {
   apolloServer.applyMiddleware({ app })
 
   const PORT = 8000
-  app.get("/", (req, res) => res.send("Express + TypeScript Server 2"))
-  app.listen(PORT, () => {
+  app.listen(8000, () => {
     console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`)
   })
 }
 
-main().catch((err) => {
+runServer().catch((err) => {
   console.error(err)
 })
