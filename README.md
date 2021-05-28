@@ -16,7 +16,7 @@ Ou pode criar e rodar uma imagem docker
 
 Com o projeto executando, você pode testar as queries GraphQL em:
 
-### `http:localhost:8000/graphql`
+### `http://localhost:8000/graphql`
 
 ## Exemplos de queries GraphQL
 
